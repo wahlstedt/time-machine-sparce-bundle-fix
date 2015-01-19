@@ -22,7 +22,7 @@ extract_dev_disk ()
 	for ((i = 0 ; i < ${#DISKS_ARRAY[@]}; i++));
 	do
 		# The dev disk we're looking for should have an Apple_HFS or APPLE_HFSX (case sensitive filesystem) label
-		if [ ${DISKS_ARRAY[$i]} = "Apple_HFS" || ${DISKS_ARRAY[$i]} = "Apple_HFSX" ]
+		if [[ ${DISKS_ARRAY[$i]} = "Apple_HFS" || ${DISKS_ARRAY[$i]} = "Apple_HFSX" ]]
 		then
 			# The actual dev disk string should be just before the Apple_HFS element in the array
 			DEV_DISK=${DISKS_ARRAY[$(($i-1))]}
